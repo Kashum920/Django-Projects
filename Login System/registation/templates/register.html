@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--- title -->
+    <title>Register Page</title>
+    <!--- customer css file -->
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+    <div class="container">
+        <form class="register" action="" method="POST">
+
+
+            {% csrf_token %}
+
+            <h2>Signup Here</h2>
+            <div class="inputBox">
+                <label for="">Username</label>
+                <input type="text" placeholder="Username" name="username" id="username">
+            </div>
+            <div class="inputBox">
+                <label for="">Email</label>
+                <input type="text" placeholder="Email or Phone" name="email" id="username">
+            </div>
+            <div class="inputBox">
+                <label for="">Password</label>
+                <input type="text" placeholder="Password" name="password1" id="password1">
+            </div>
+            <div class="inputBox">
+                <label for="">Conform Password</label>
+                <input type="text" placeholder="Conform Password" name="password2" id="password2">
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Signup">
+            </div>
+
+            <a href="{% url 'login' %}" class="log">I have allready account</a>
+        </form>
+    </div>
+    
+</body>
+</html>
